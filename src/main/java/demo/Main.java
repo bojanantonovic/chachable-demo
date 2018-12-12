@@ -7,9 +7,9 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        try (final AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfiguration.class)) {
+        try (var context = new AnnotationConfigApplicationContext(MyConfiguration.class)) {
 
-            final DemoObjectService service = context.getBean(DemoObjectService.class);
+            var service = context.getBean(DemoObjectService.class);
 
             new Random().
                     ints(1, 10).
